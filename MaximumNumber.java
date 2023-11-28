@@ -1,47 +1,27 @@
 import java.util.*;
 public class MaximumNumber {
-	public static int checkMaximum(Integer x, Integer y, Integer z) {
-		Integer max = x;
-		if (y.compareTo(max) > 0) {
-			max = y; // y is largest now
+	private static <T extends Comparable> void getMaximum(T x, T y, T z) {
+
+		T max = x;
+		if (y.compareTo(x) > 0) {
+			max = y;
 		}
 		if (z.compareTo(max) > 0) {
-			max = z; // z is largest now
+			max = z;
 		}
-		return max; // returns maximum number
-	}
 
-	public static Double checkMaximum(Double d, Double e, Double f) {
-		Double max = d;
-		if (e.compareTo(max) > 0) {
-			max = e; // e is largest now
-		}
-		if (f.compareTo(max) > 0) {
-			max = f; // f is largest
-		}
-		return max; // returns maximum number
-	}
-
-	// Calculating maximum of 3 Strings
-	public static String checkMaximum(String s1, String s2, String s3) {
-		String max = s1;
-		if (s2.compareTo(max) > 0) {
-			max = s2; // s2 is Maximum now
-		}
-		if (s3.compareTo(max) > 0) {
-			max = s3; // s3 is Maximum now
-		}
-		return max; // returns maximum value
+		System.out.println("Maximum ::" + max);
 	}
 
 	public static void main(String[] args) {
+		System.out.println("Welcome to Generic Program.");
+		Integer x = 10, y = 23, z = 15;
+		Float d = 12.5f, e = 13.4f, f = 22.0f;
+		String s1 = "Apple", s2 = "Peach", s3 = "Banana";
 
-		int c = checkMaximum(10, 23, 15);
-		Double d = checkMaximum(12.5, 13.4, 22.0);
-		String s = checkMaximum("Apple", "Peach", "Banana");
-		System.out.println("The Maximum int value is : " + c);
-		System.out.println("The Maximum float value is : " + d);
-		System.out.println("The Maximum String value is : " + s);
+		MaximumNumber max = new MaximumNumber();
+		max.getMaximum(x, y, z);
+		max.getMaximum(d, e, f);
+		max.getMaximum(s1, s2, s3);
 	}
-
 }
